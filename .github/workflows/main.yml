@@ -1,0 +1,23 @@
+name: Package Extension
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Zip extension
+        run: |
+          zip -r BraveQR-Scanner.zip . -x "*.git*" "*.github*" "LICENSE" "README.md" "CONTRIBUTING.md" "CODE_OF_CONDUCT.md"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: BraveQR-Extension-Package
+          path: BraveQR-Scanner.zip
