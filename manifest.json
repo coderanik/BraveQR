@@ -1,14 +1,11 @@
 {
   "manifest_version": 3,
   "name": "BraveQR Scanner",
-  "version": "1.0.0",
-  "description": "A sleek and powerful QR code scanner for the Brave ecosystem.",
+  "version": "1.1.0",
+  "description": "Scan entire webpages for all available QR codes instantly.",
   "permissions": [
-    "contextMenus",
     "activeTab",
-    "scripting",
-    "storage",
-    "notifications"
+    "scripting"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -26,19 +23,10 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "background": {
-    "service_worker": "background.js"
-  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["scripts/jsQR.js", "scripts/content.js"]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["assets/*", "scripts/jsQR.js", "styles/lens.css"],
-      "matches": ["<all_urls>"]
     }
   ]
 }
