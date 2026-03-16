@@ -21,11 +21,14 @@
     </div>
 
     <div class="controls">
-      <button id="start-scan" class="primary">
-        <span>📸</span> Start Camera Scan
+      <button id="start-lens" class="primary" style="background: linear-gradient(135deg, #ff5000, #ff9000);">
+        <span>🔍</span> Lens Selection Scan
+      </button>
+      <button id="start-scan">
+        <span>📸</span> Camera View
       </button>
       <button id="scan-page">
-        <span>📄</span> Scan Entire Page
+        <span>📄</span> Full Page Scan
       </button>
     </div>
 
@@ -34,6 +37,7 @@
       <div id="scan-result">Waiting for QR code...</div>
     </div>
   </div>
+  <script src="scripts/jsQR.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>
