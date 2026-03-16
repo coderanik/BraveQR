@@ -7,25 +7,60 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
+
+  <!-- Ambient background layers -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  <div class="bg-glow-2"></div>
+
   <div class="container">
+
+    <!-- Header -->
     <header>
-      <img src="icons/icon48.png" alt="BraveQR Logo" class="logo">
-      <h1>BraveQR</h1>
+      <div class="header-left">
+        <div class="logo-wrap">
+          <div class="logo-ring"></div>
+          <img src="icons/icon48.png" alt="BraveQR Logo" class="logo">
+        </div>
+        <div class="title-block">
+          <h1>BraveQR</h1>
+          <div class="status-pill">
+            <span class="status-dot" id="status-dot"></span>
+            <span id="status-text">Ready</span>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <div class="controls">
-      <button id="scan-page">
-        <span>📄</span> Scan Page for QR Codes
-      </button>
+    <!-- Scan Button -->
+    <button class="btn-scan" id="scan-page">
+      <span class="btn-icon">📄</span>
+      <span id="btn-label">Scan Page for QR Codes</span>
+    </button>
+
+    <!-- Results Section -->
+    <div class="section-label">
+      Detected Codes
+      <span class="count-badge" id="count-badge" style="display:none"></span>
     </div>
 
-    <div class="result-area">
-      <div class="result-header">Detected Codes</div>
-      <div id="qr-list" class="qr-list">
-        <div class="empty-state">Click the button above to start scanning this page.</div>
+    <div id="qr-list" class="qr-list">
+      <div class="empty-state">
+        <div class="empty-icon">🔍</div>
+        <div class="empty-title">No results yet</div>
+        <div class="empty-sub">Hit the button above to scan<br>every QR code on this page.</div>
       </div>
     </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-brand">BraveQR v1.1</span>
+      <span id="footer-hint">Privacy · Local · Instant</span>
+    </div>
+
   </div>
+
+  <script src="scripts/jsQR.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>
