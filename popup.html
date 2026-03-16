@@ -13,31 +13,19 @@
       <h1>BraveQR</h1>
     </header>
 
-    <div class="scanner-box" id="scanner-container">
-      <video id="video-preview" autoplay playsinline></video>
-      <div class="scanner-overlay">
-        <div class="scanner-laser"></div>
-      </div>
-    </div>
-
     <div class="controls">
-      <button id="start-lens" class="primary" style="background: linear-gradient(135deg, #ff5000, #ff9000);">
-        <span>🔍</span> Lens Selection Scan
-      </button>
-      <button id="start-scan">
-        <span>📸</span> Camera View
-      </button>
       <button id="scan-page">
-        <span>📄</span> Full Page Scan
+        <span>📄</span> Scan Page for QR Codes
       </button>
     </div>
 
     <div class="result-area">
-      <div class="result-header">Result</div>
-      <div id="scan-result">Waiting for QR code...</div>
+      <div class="result-header">Detected Codes</div>
+      <div id="qr-list" class="qr-list">
+        <div class="empty-state">Click the button above to start scanning this page.</div>
+      </div>
     </div>
   </div>
-  <script src="scripts/jsQR.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>
