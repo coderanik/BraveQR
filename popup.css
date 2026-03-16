@@ -19,7 +19,6 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg-dark);
   color: var(--text-main);
-  overflow: hidden;
 }
 
 .container {
@@ -49,53 +48,6 @@ h1 {
   letter-spacing: -0.5px;
 }
 
-.scanner-box {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1;
-  background: var(--bg-card);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(10px);
-}
-
-#video-preview {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.scanner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  border: 2px solid transparent;
-}
-
-.scanner-laser {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--primary-color);
-  box-shadow: 0 0 10px var(--primary-color);
-  animation: scan 2s linear infinite;
-}
-
-@keyframes scan {
-  0% { top: 0; }
-  100% { top: 100%; }
-}
-
 .controls {
   display: flex;
   flex-direction: column;
@@ -103,44 +55,35 @@ h1 {
 }
 
 button {
-  background: var(--bg-card);
-  border: 1px solid var(--glass-border);
+  background: var(--primary-color);
+  border: none;
   color: white;
-  padding: 12px;
+  padding: 14px;
   border-radius: 12px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 15px;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(255, 80, 0, 0.3);
 }
 
 button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--primary-color);
-}
-
-button.primary {
-  background: var(--primary-color);
-  border: none;
-}
-
-button.primary:hover {
-  box-shadow: 0 0 15px var(--primary-glow);
+  box-shadow: 0 6px 20px var(--primary-glow);
   transform: translateY(-1px);
 }
 
+button:active {
+  transform: translateY(1px);
+}
+
 .result-area {
-  background: var(--bg-card);
-  border: 1px solid var(--glass-border);
-  padding: 12px;
-  border-radius: 12px;
-  min-height: 60px;
-  word-break: break-all;
-  font-size: 13px;
-  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .result-header {
@@ -149,4 +92,48 @@ button.primary:hover {
   letter-spacing: 1px;
   margin-bottom: 4px;
   color: var(--primary-color);
+  font-weight: bold;
+}
+
+.qr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qr-item {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  padding: 12px;
+  border-radius: 12px;
+  word-break: break-all;
+  font-size: 13px;
+  color: var(--text-main);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.qr-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary-color);
+}
+
+.qr-item a {
+  color: #ff5000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.qr-item .copy-hint {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  display: block;
+}
+
+.empty-state {
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+  padding: 20px 0;
 }
