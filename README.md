@@ -112,6 +112,14 @@ Released under the [MIT License](LICENSE) — free to use, modify, and distribut
 
 ---
 
+## 🎨 UI Design
+
+<div align="center">
+  <img src="assets/braveqr_preview.png" width="600" alt="BraveQR UI Design" />
+</div>
+
+---
+
 <div align="center">
 
 Made with ❤️ for the Brave community
